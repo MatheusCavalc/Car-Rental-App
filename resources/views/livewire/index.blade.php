@@ -16,15 +16,7 @@ state([
     'return_time' => '',
 ]);
 
-rules([
-    'pickup_location' => ['required', 'string', 'max:255'],
-    'pickup_date' => ['required', 'string', 'max:255'],
-    'pickup_time' => ['required', 'string', 'max:255'],
-    'return_date' => ['required', 'string', 'max:255'],
-    'return_time' => ['required', 'string', 'max:255'],
-]);
-
-$test = function () {
+$searchLocations = function () {
     if (strlen($this->pickup_location) >= 1) {
         $this->locations = Location::where('name', 'LIKE', "%{$this->pickup_location}%")
             ->limit(5)
@@ -38,16 +30,20 @@ $chooseLocation = function ($location) {
 };
 
 $search = function () {
-    $validated = $this->validate();
+    session([
+        'pickup_location' => $this->pickup_location,
+        'pickup_date' => $this->pickup_date,
+        'pickup_time' => $this->pickup_time,
+        'return_date' => $this->return_date,
+        'return_time' => $this->return_time,
+    ]);
 
-    //dd($this->pickup_location, $this->pickup_date, $this->pickup_time, $this->return_date, $this->return_time);
-
-    $this->redirect('/dashboard', navigate: true);
-}
+    $this->redirect('/reserve/itinerary', navigate: true);
+};
 
 ?>
 
-<div class="lg:pt-16 pt-14">
+<div class="lg:py-16 py-14">
     <!-- Form rental -->
     <div class="bg-blue-800 py-10 lg:py-14 px-4 lg:px-20">
 
@@ -60,7 +56,7 @@ $search = function () {
         <div class="lg:flex lg:gap-3 w-full">
             <div class="lg:w-5/12 relative">
                 <label for="first_name" class="block mb-2 text-white font-medium dark:text-white">Pickup Location</label>
-                <input type="text" wire:model='pickup_location' wire:keyup='test'
+                <input type="text" wire:model='pickup_location' wire:keyup='searchLocations'
                     class="bg-gray-50 border w-full h-12 border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="Where do you want to rent?" required />
 
@@ -89,8 +85,9 @@ $search = function () {
                         class="bg-gray-50 w-2/3 h-12 text-gray-900 rounded-l-lg block p-2.5" placeholder="John"
                         required />
 
-                    <select id="first_name" wire:model='pickup_time' class="bg-gray-50 w-1/3 h-12 text-gray-900 rounded-r-lg block p-2.5"
-                        placeholder="John" required>
+                    <select id="first_name" wire:model='pickup_time'
+                        class="bg-gray-50 w-1/3 h-12 text-gray-900 rounded-r-lg block p-2.5" placeholder="John"
+                        required>
                         <option value="00:00">00:00</option>
                         <option value="00:30">00:30</option>
                         <option value="01:00">01:00</option>
@@ -107,8 +104,9 @@ $search = function () {
                         class="bg-gray-50 w-2/3 h-12 text-gray-900 rounded-l-lg block p-2.5" placeholder="John"
                         required />
 
-                    <select id="first_name" wire:model='return_time' class="bg-gray-50 w-1/3 h-12 text-gray-900 rounded-r-lg block p-2.5"
-                        placeholder="John" required>
+                    <select id="first_name" wire:model='return_time'
+                        class="bg-gray-50 w-1/3 h-12 text-gray-900 rounded-r-lg block p-2.5" placeholder="John"
+                        required>
                         <option value="00:00">00:00</option>
                         <option value="00:30">00:30</option>
                         <option value="01:00">01:00</option>

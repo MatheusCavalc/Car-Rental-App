@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Pages\Index;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
@@ -15,6 +16,9 @@ use Livewire\Volt\Volt;
 */
 
 Volt::route('/', 'index');
+//Route::get('/mclamscla', Index::class);
+Volt::route('/reserve/itinerary', 'pages.itinerary');
+Volt::route('/reserve/choose-vehicle', 'pages.choose-vehicle');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
