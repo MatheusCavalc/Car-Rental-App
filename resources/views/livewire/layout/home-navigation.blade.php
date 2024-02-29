@@ -12,7 +12,7 @@ $logout = function (Logout $logout) {
 ?>
 
 <div class="relative">
-    <div x-data="{ open: false, open1: false }" class="absolute w-full top-0">
+    <div x-data="{ open: false, open1: false }" class="fixed z-50 w-full top-0">
         <nav class="bg-blue-600 border-gray-200 dark:bg-gray-900">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-2 py-4">
                 <div class="flex gap-1">
@@ -29,7 +29,7 @@ $logout = function (Logout $logout) {
                     <a href="/" wire:navigate class="flex items-center space-x-3 rtl:space-x-reverse">
                         <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
                         <span
-                            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+                            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Car Rental</span>
                     </a>
                 </div>
                 <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse h-10">
@@ -48,14 +48,14 @@ $logout = function (Logout $logout) {
                                 class="z-50 absolute top-10 lg:top-8 right-1 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
                                 id="user-dropdown">
                                 <div class="px-4 py-3">
-                                    <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
+                                    <span class="block text-sm text-gray-900 dark:text-white">{{ auth()->user()->name }}</span>
                                     <span
-                                        class="block text-sm  text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
+                                        class="block text-sm  text-gray-500 truncate dark:text-gray-400">{{ auth()->user()->email }}</span>
                                 </div>
                                 <ul class="py-2" aria-labelledby="user-menu-button">
                                     <li>
                                         <a href="#"
-                                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
+                                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">My Reservations</a>
                                     </li>
                                     <li>
                                         <a href="#"
@@ -85,12 +85,12 @@ $logout = function (Logout $logout) {
                     <ul
                         class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-blue-600 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                         <li>
-                            <a href="#"
-                                class="block py-2 px-3 text-gray-900 lg:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Home</a>
+                            <a href="/reserve/itinerary" wire:navigate
+                                class="block py-2 px-3 text-gray-900 lg:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Rental</a>
                         </li>
                         <li>
                             <a href="#"
-                                class="block py-2 px-3 text-gray-900 lg:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+                                class="block py-2 px-3 text-gray-900 lg:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Month Rental</a>
                         </li>
                         <li>
                             <a href="#"

@@ -124,7 +124,7 @@ $search = function () {
     </div>
 
     <!-- Why rental on this site -->
-    <div>
+    <div class="min-h-screen">
 
     </div>
 

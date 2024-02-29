@@ -15,11 +15,18 @@ use Livewire\Volt\Volt;
 |
 */
 
-Volt::route('/', 'index');
-//Route::get('/mclamscla', Index::class);
-Volt::route('/reserve/itinerary', 'pages.itinerary');
-Volt::route('/reserve/choose-vehicle', 'pages.choose-vehicle');
+//Route::get('/', Index::class);
+Volt::route('/', 'index')
+    ->name('index');
 
+Volt::route('/reserve/itinerary', 'pages.itinerary')
+    ->name('itinerary');
+
+Volt::route('/reserve/choose-vehicle', 'pages.choose-vehicle')
+    ->middleware(['check.location.valid'])
+    ->name('choose.vehicle');
+
+//Auth/Dashboard routes
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
@@ -28,4 +35,4 @@ Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
