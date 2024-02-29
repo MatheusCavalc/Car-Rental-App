@@ -115,20 +115,23 @@ $pickup_location_info = function ($location) {
 
         <div class="fixed lg:relative z-20 top-16 mt-2 lg:mt-0 lg:top-0 left-0 lg:col-span-1 order-1 lg:order-2 w-full">
             <div x-data="{ open_reserve: false }" class="px-6 py-4 lg:px-0 lg:py-0 bg-white shadow-2xl lg:shadow-none">
-                <div class="flex justify-between cursor-pointer lg:cursor-default" @click="open_reserve = ! open_reserve">
+                <div class="flex justify-between cursor-pointer lg:cursor-default"
+                    @click="open_reserve = ! open_reserve">
                     <p class="text-lg lg:text-2xl font-bold">Your Reserve</p>
 
-                    <p class="lg:hidden">
+                    <p :class="{ '-rotate-180': open_reserve, '': !open_reserve }"
+                        class="lg:hidden transition-transform">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-6 h-6 mt-1.5">
+                            stroke="currentColor" class="w-6 h-6 mt-1">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                         </svg>
                     </p>
                 </div>
 
-                <div :class="{ 'md:block': open_reserve, 'hidden md:block': !open_reserve }" class="mt-5 p-3 bg-gray-200 rounded-md">
+                <div :class="{ 'md:block': open_reserve, 'hidden md:block': !open_reserve }"
+                    class="mt-5 p-3 bg-gray-200 rounded-md">
                     <div class="flex justify-between">
-                        <p>Rental Days</p>
+                        <p class="font-bold">Rental Days</p>
                         <p>{{ $this->rental_days() }} days</p>
                     </div>
 
@@ -204,7 +207,8 @@ $pickup_location_info = function ($location) {
                         <div class="lg:ml-6">
                             <p class="font-bold mb-1">{{ $this->pickup_location }}</p>
 
-                            <p class="text-gray-700 mb-1">{{ $this->pickup_location_info($this->pickup_location) }}</p>
+                            <p class="text-gray-700 mb-1">{{ $this->pickup_location_info($this->pickup_location) }}
+                            </p>
 
                             <div class="flex gap-2">
                                 <div class="flex gap-1">

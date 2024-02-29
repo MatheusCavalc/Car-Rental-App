@@ -79,11 +79,21 @@ $continue = function () {
 
             <div class="mt-5 w-full p-5 bg-gray-200 rounded-md">
                 <div>
-                    <p>Pickup</p>
+                    <div class="flex gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                        </svg>
+
+                        <p class="font-bold">Pickup</p>
+                    </div>
 
                     <div class="lg:flex gap-3">
                         <div class="lg:w-1/2 relative">
-                            <label for="first_name" class="block mb-2 text-white font-medium dark:text-white">Pickup
+                            <label for="first_name" class="block mb-2 text-black dark:text-white">Pickup
                                 Location</label>
                             <input type="text" wire:model='pickup_location' wire:keyup='searchLocations'
                                 class="bg-gray-50 border w-full h-12 border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -114,7 +124,7 @@ $continue = function () {
                         </div>
 
                         <div class="lg:w-1/2 mt-4 lg:mt-0">
-                            <label for="first_name" class="block mb-2 text-white font-medium dark:text-white">Pickup
+                            <label for="first_name" class="block mb-2 text-black dark:text-white">Pickup
                                 Date
                                 and
                                 Time</label>
@@ -122,7 +132,7 @@ $continue = function () {
                             <div class="flex">
                                 <div class="w-2/3">
                                     <input type="date" id="first_name" wire:model='pickup_date'
-                                        class="bg-gray-50 w-full h-12 text-gray-900 rounded-l-lg block p-2.5"
+                                        class="bg-gray-50 w-full h-12 border border-gray-300 text-gray-900 rounded-l-lg block p-2.5"
                                         placeholder="John" required />
 
                                     <div>
@@ -134,7 +144,7 @@ $continue = function () {
 
                                 <div class="w-1/3">
                                     <select id="first_name" wire:model='pickup_time'
-                                        class="bg-gray-50 w-full h-12 text-gray-900 rounded-r-lg block p-2.5"
+                                        class="bg-gray-50 w-full h-12 border border-gray-300 text-gray-900 rounded-r-lg block p-2.5"
                                         placeholder="John" required>
                                         <option value="00:00">00:00</option>
                                         <option value="00:30">00:30</option>
@@ -152,16 +162,26 @@ $continue = function () {
                     </div>
                 </div>
 
-                <div class="py-8">
-                    <div class="h-0.5 w-full rounded-full bg-red-500"></div>
+                <div class="py-5">
+                    <div class="h-0.5 w-full rounded-full bg-blue-600"></div>
                 </div>
 
                 <div>
-                    <p>Return</p>
+                    <div class="flex gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                        </svg>
+
+                        <p class="font-bold">Return</p>
+                    </div>
 
                     <div class="lg:flex gap-3">
                         <div class="lg:w-1/2 relative">
-                            <label for="first_name" class="block mb-2 text-white font-medium dark:text-white">Return
+                            <label for="first_name" class="block mb-2 text-black dark:text-white">Return
                                 Location</label>
                             <input type="text" wire:model='pickup_location' wire:keyup='searchLocations'
                                 class="bg-gray-50 border w-full h-12 border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -192,7 +212,7 @@ $continue = function () {
                         </div>
 
                         <div class="lg:w-1/2 mt-4 lg:mt-0">
-                            <label for="first_name" class="block mb-2 text-white font-medium dark:text-white">Return
+                            <label for="first_name" class="block mb-2 text-black dark:text-white">Return
                                 Date
                                 and
                                 Time</label>
@@ -200,7 +220,7 @@ $continue = function () {
                             <div class="flex">
                                 <div class="w-2/3">
                                     <input type="date" id="first_name" wire:model='return_date'
-                                        class="bg-gray-50 w-full h-12 text-gray-900 rounded-l-lg block p-2.5"
+                                        class="bg-gray-50 w-full h-12 border border-gray-300 text-gray-900 rounded-l-lg block p-2.5"
                                         placeholder="John" required />
 
                                     <div>
@@ -212,7 +232,7 @@ $continue = function () {
 
                                 <div class="w-1/3">
                                     <select id="first_name" wire:model='return_time'
-                                        class="bg-gray-50 w-full h-12 text-gray-900 rounded-r-lg block p-2.5"
+                                        class="bg-gray-50 w-full h-12 border border-gray-300 text-gray-900 rounded-r-lg block p-2.5"
                                         placeholder="John" required>
                                         <option value="00:00">00:00</option>
                                         <option value="00:30">00:30</option>
@@ -230,12 +250,12 @@ $continue = function () {
                     </div>
                 </div>
 
-                <div class="py-8">
-                    <div class="h-0.5 w-full rounded-full bg-red-500"></div>
+                <div class="py-5">
+                    <div class="h-0.5 w-full rounded-full bg-blue-600"></div>
                 </div>
 
                 <div>
-                    <p>Promotional Code</p>
+                    <p class="mb-2">Promotional Code</p>
 
                     <div class="lg:flex gap-3">
                         <div class="lg:w-1/2 mt-4 lg:mt-0">
@@ -255,7 +275,7 @@ $continue = function () {
 
             <div class="mt-5 p-3 bg-gray-200 rounded-md">
                 <div class="flex justify-between">
-                    <p>Rental Days</p>
+                    <p class="font-bold">Rental Days</p>
                     <p>{{ $this->rental_days() }} days</p>
                 </div>
 
@@ -272,7 +292,7 @@ $continue = function () {
                                     d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
                             </svg>
 
-                            <p class="text-black">
+                            <p class="text-black font-bold">
                                 Pickup
                             </p>
                         </div>
@@ -280,8 +300,8 @@ $continue = function () {
                         <p>Edit</p>
                     </div>
 
-                    <div>
-                        <p>{{ $this->pickup_location }}</p>
+                    <div class="lg:ml-6">
+                        <p class="font-bold mb-1">{{ $this->pickup_location }}</p>
 
                         <div class="flex gap-2">
                             <div class="flex gap-1">
@@ -318,7 +338,7 @@ $continue = function () {
                                     d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
                             </svg>
 
-                            <p class="text-black">
+                            <p class="text-black font-bold">
                                 Return
                             </p>
                         </div>
@@ -326,8 +346,8 @@ $continue = function () {
                         <p>Edit</p>
                     </div>
 
-                    <div>
-                        <p>{{ $this->pickup_location }}</p>
+                    <div class="lg:ml-6">
+                        <p class="font-bold mb-1">{{ $this->pickup_location }}</p>
 
                         <div class="flex gap-2">
                             <div class="flex gap-1">

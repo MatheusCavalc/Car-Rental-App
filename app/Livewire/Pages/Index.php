@@ -50,6 +50,8 @@ class Index extends Component
     #[Title('Home')]
     public function render()
     {
+        sleep(10);
+
         return view('livewire.pages.index');
     }
 }
