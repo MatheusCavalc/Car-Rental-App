@@ -114,11 +114,11 @@ $search = function () {
                 </div>
             </div>
 
-            <div class="lg:w-1/12 mt-10">
-                <a wire:click='search' type="button"
-                    class="text-white text-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg w-full px-4 py-3 text-center">
+            <div class="lg:w-1/12 mt-8">
+                <x-app.primary-button wire:click='search' type="button"
+                    class="text-lg font-medium px-4 h-12">
                     Search
-                </a>
+                </x-app.primary-button>
             </div>
         </div>
     </div>

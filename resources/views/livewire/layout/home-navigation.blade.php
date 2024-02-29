@@ -28,8 +28,8 @@ $logout = function (Logout $logout) {
                     </button>
                     <a href="/" wire:navigate class="flex items-center space-x-3 rtl:space-x-reverse">
                         <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
-                        <span
-                            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Car Rental</span>
+                        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Car
+                            Rental</span>
                     </a>
                 </div>
                 <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse h-10">
@@ -48,14 +48,16 @@ $logout = function (Logout $logout) {
                                 class="z-50 absolute top-10 lg:top-8 right-1 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
                                 id="user-dropdown">
                                 <div class="px-4 py-3">
-                                    <span class="block text-sm text-gray-900 dark:text-white">{{ auth()->user()->name }}</span>
+                                    <span
+                                        class="block text-sm text-gray-900 dark:text-white">{{ auth()->user()->name }}</span>
                                     <span
                                         class="block text-sm  text-gray-500 truncate dark:text-gray-400">{{ auth()->user()->email }}</span>
                                 </div>
                                 <ul class="py-2" aria-labelledby="user-menu-button">
                                     <li>
                                         <a href="#"
-                                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">My Reservations</a>
+                                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">My
+                                            Reservations</a>
                                     </li>
                                     <li>
                                         <a href="#"
@@ -67,16 +69,17 @@ $logout = function (Logout $logout) {
                                     </li>
                                     <li>
                                         <a wire:click="logout"
-                                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign
+                                            class="block cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign
                                             out</a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     @else
-                        <a href="/login" wire:navigate type="button"
-                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            Get started
+                        <a href="/login" wire:navigate>
+                            <x-app.primary-button class="font-medium text-sm px-4 py-2">
+                                Get started
+                            </x-app.primary-button>
                         </a>
                     @endauth
                 </div>
@@ -90,7 +93,8 @@ $logout = function (Logout $logout) {
                         </li>
                         <li>
                             <a href="#"
-                                class="block py-2 px-3 text-gray-900 lg:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Month Rental</a>
+                                class="block py-2 px-3 text-gray-900 lg:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Month
+                                Rental</a>
                         </li>
                         <li>
                             <a href="#"

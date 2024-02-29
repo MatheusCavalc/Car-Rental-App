@@ -70,41 +70,10 @@ $pickup_location_info = function ($location) {
                                 </p>
 
                                 <div class="flex justify-center mt-5">
-                                    <button
-                                        class="text-center text-sm text-white w-full px-12 py-2 rounded-md bg-blue-600">
+                                    <x-app.primary-button
+                                        class="text-sm px-12 py-2">
                                         Pay Now
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-
-                @foreach ($this->vehicles() as $car)
-                    <div class="w-full bg-white rounded-md border">
-                        <div class="bg-gray-300 rounded-t-md p-2 lg:p-4">
-                            <p class="text-base lg:text-xl">
-                                {{ $car->brand }} {{ $car->model }} {{ $car->year }}
-                            </p>
-                        </div>
-
-                        <div class="lg:flex justify-between px-6 py-8">
-                            <div class="flex justify-center">
-                                <img class="h-32 object-cover"
-                                    src="https://w7.pngwing.com/pngs/723/547/png-transparent-chevrolet-onix-car-general-motors-vehicle-chevrolet.png" />
-                            </div>
-
-                            <div class="pt-3 pb-6 px-2 border rounded-md mt-5 lg:mt-0">
-                                <p class="text-2xl font-bold text-center">
-                                    <span class="text-lg font-normal">R$</span>
-                                    {{ $car->daily_price }}
-                                </p>
-
-                                <div class="flex justify-center mt-5">
-                                    <button
-                                        class="text-center text-sm text-white w-full px-12 py-2 rounded-md bg-blue-600">
-                                        Pay Now
-                                    </button>
+                                    </x-app.primary-button>
                                 </div>
                             </div>
                         </div>
@@ -121,10 +90,7 @@ $pickup_location_info = function ($location) {
 
                     <p :class="{ '-rotate-180': open_reserve, '': !open_reserve }"
                         class="lg:hidden transition-transform">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-6 h-6 mt-1">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                        </svg>
+                        <x-app.icons.arrow-down-icon class="w-6 h-6 mt-1" />
                     </p>
                 </div>
 
@@ -140,14 +106,7 @@ $pickup_location_info = function ($location) {
                     <div class="mt-2">
                         <div class="flex justify-between">
                             <div class="flex gap-1 text-blue-600">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-                                </svg>
-
+                                <x-app.icons.pin-icon class="w-5 h-5" />
                                 <p class="text-black font-bold">
                                     Pickup
                                 </p>
@@ -163,22 +122,12 @@ $pickup_location_info = function ($location) {
 
                             <div class="flex gap-2">
                                 <div class="flex gap-1">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
-                                    </svg>
-
+                                    <x-app.icons.calendar-icon class="w-5 h-5" />
                                     <p>{{ $this->pickup_date }}</p>
                                 </div>
 
                                 <div class="flex gap-1">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                                    </svg>
-
+                                    <x-app.icons.clock-icon class="w-5 h-5" />
                                     <p>{{ $this->pickup_time }}H</p>
                                 </div>
                             </div>
@@ -188,14 +137,7 @@ $pickup_location_info = function ($location) {
                     <div class="mt-2">
                         <div class="flex justify-between">
                             <div class="flex gap-1 text-blue-600">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-                                </svg>
-
+                                <x-app.icons.pin-icon class="w-5 h-5" />
                                 <p class="text-black font-bold">
                                     Return
                                 </p>
@@ -212,22 +154,12 @@ $pickup_location_info = function ($location) {
 
                             <div class="flex gap-2">
                                 <div class="flex gap-1">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
-                                    </svg>
-
+                                    <x-app.icons.calendar-icon class="w-5 h-5" />
                                     <p>{{ $this->return_date }}</p>
                                 </div>
 
                                 <div class="flex gap-1">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                                    </svg>
-
+                                    <x-app.icons.clock-icon class="w-5 h-5" />
                                     <p>{{ $this->return_time }}H</p>
                                 </div>
                             </div>
